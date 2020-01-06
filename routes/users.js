@@ -2,6 +2,7 @@ var express = require('express');
 var Users = require('../models/users');
 const bodyParser = require('body-parser');
 var passport = require('passport');
+var authenticate = require('../authenticate');
 
 
 const userRouter = express.Router();
