@@ -21,11 +21,7 @@ userRouter.route('/')
   });
 })
 .post((req,res,next) => {
-  Users.create(req.body)
-  .then((user)=>{
-    res.json({"status":"ok"});
-  },(err)=>next(err))
-  .catch((err)=>next(err))
+  
 });
 
 userRouter.post('/signup',(req,res,next)=>{
@@ -52,9 +48,10 @@ userRouter.post('/signup',(req,res,next)=>{
 });
 
 userRouter.post('/login',passport.authenticate('local'),(req,res)=>{
+  var token = authenticate.getToken({_id:req.user._id});
   res.statusCode = 200;
   res.setHeader('Content-type','application/json');
-  res.json({"status":"login working fine"});
+  res.json({status:"You are succesfully logged In",success:true,token:token});
 });
 
 module.exports = userRouter;
