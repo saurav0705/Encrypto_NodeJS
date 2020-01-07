@@ -13,11 +13,11 @@ const user = new Schema({
     },
     encryptedText : [ {
         type : mongoose.Schema.Types.ObjectId,
-       ref :'TextSchema'
+       ref :'TextModel'
     } ],
     decryptedText : [ {
         type : mongoose.Schema.Types.ObjectId,
-       ref :'TextSchema'
+       ref :'TextModel'
     } ],
 
 },{

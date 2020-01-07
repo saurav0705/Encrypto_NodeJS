@@ -19,4 +19,4 @@ const textSchema = new Schema({
     timestamps:true
 });
 
-module.exports = mongoose.model('TextSchema',textSchema);
+module.exports = mongoose.model('TextModel',textSchema);

@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var textRouter = require('./routes/textRouter');
 var config = require('./config');
 var passport = require('passport');
 
@@ -31,6 +32,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/textEncryption',textRouter);
 
 
 

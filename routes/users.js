@@ -34,6 +34,8 @@ userRouter.post('/signup',(req,res,next)=>{
     else{
       user.firstname = req.body.firstname;
       user.lastname = req.body.lastname;
+      user.encryptedText = [];
+      user.decryptedText = [];
       user.save()
       .then((user)=>{
         passport.authenticate('local')(req,res,()=>{
