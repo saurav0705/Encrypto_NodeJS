@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const textSchema = new Schema({
-    IncomingText:{
+    InputText:{
         type:String,
         required:true
     },
