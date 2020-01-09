@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var textRouter = require('./routes/textRouter');
 var config = require('./config');
 var passport = require('passport');
+var authenticate = require('./authenticate');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use(authenticate.verifyUser);
 app.use('/text',textRouter);
 
 
